@@ -1,0 +1,27 @@
+.container {
+  margin-top: 3.2rem;
+  height: 5.5rem;
+}
+
+.currencyWrapper {
+  border-radius: 2rem;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 4px 0px #0e57d642;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.9rem 3rem;
+}
+
+.currencyWrapper > span,
+.currency > span {
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.currency > span + span {
+  margin-left: 2.7rem;
+}

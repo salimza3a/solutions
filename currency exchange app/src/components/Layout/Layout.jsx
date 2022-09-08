@@ -57,18 +57,18 @@ function Layout() {
   // uncompleted part here i use for loop with axios for fetching data but i have a problem
   // i need to time for fixing bug here are my solving way
   function getINputValueAndConvertNewResult(amount) {
-    const arr = [];
+    // const arr = [];
 
-    for (let i = 0; i < staticCurrencies.length; i++) {
-      axios
-        .get(
-          `https://api.apilayer.com/exchangerates_data/convert?to=${staticCurrencies[i].pastToCurrency.toCurrency}&from=${staticCurrencies[i].pastToCurrency.fromCurrency}&amount=${amount}`
-        )
-        .then(({ data }) => {
-          console.log(data.result, "data");
-          arr = [data.result];
-        });
-    }
+    // for (let i = 0; i < staticCurrencies.length; i++) {
+    //   axios
+    //     .get(
+    //       `https://api.apilayer.com/exchangerates_data/convert?to=${staticCurrencies[i].pastToCurrency.toCurrency}&from=${staticCurrencies[i].pastToCurrency.fromCurrency}&amount=${amount}`
+    //     )
+    //     .then(({ data }) => {
+    //       console.log(data.result, "data");
+    //       arr = [data.result];
+    //     });
+    // }
     console.log(arr, "array");
   }
 

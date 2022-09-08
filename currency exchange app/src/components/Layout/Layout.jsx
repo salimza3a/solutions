@@ -30,43 +30,56 @@ function Layout() {
       currency_id: "001",
       currency_sign: "$",
       currency_name: "Dollar",
-      currency_value: 58.82,
+      currency_value: "",
     },
     {
       pastToCurrency: { fromCurrency, toCurrency: "EUR" },
       currency_id: "002",
       currency_sign: "€",
       currency_name: "Euro",
-      currency_value: 25.85,
+      currency_value: "",
     },
     {
       pastToCurrency: { fromCurrency, toCurrency: "TRY" },
       currency_id: "003",
       currency_sign: "₺",
       currency_name: "Tl",
-      currency_value: 35.85,
+      currency_value: "",
     },
     {
       pastToCurrency: { fromCurrency, toCurrency: "RUB" },
       currency_id: "004",
       currency_sign: "₽",
       currency_name: "Rubl",
-      currency_value: 15.85,
+      currency_value: "",
     },
   ];
+  // uncompleted part here i use for loop with axios for fetching data but i have a problem
+  // i need to time for fixing bug here are my solving way
+  function getINputValueAndConvertNewResult(amount) {
+    const arr = [];
 
-  // axios
-  //   .get(
-  //     `https://api.apilayer.com/exchangerates_data/convert?to=${
-  //       staticCurrencies[i].pastToCurrency.toCurrency
-  //     }&from=${staticCurrencies[i].pastToCurrency.fromCurrency}&amount=${13}`
-  //   )
+    for (let i = 0; i < staticCurrencies.length; i++) {
+      axios
+        .get(
+          `https://api.apilayer.com/exchangerates_data/convert?to=${staticCurrencies[i].pastToCurrency.toCurrency}&from=${staticCurrencies[i].pastToCurrency.fromCurrency}&amount=${amount}`
+        )
+        .then(({ data }) => {
+          console.log(data.result, "data");
+          arr = [data.result];
+        });
+    }
+    console.log(arr, "array");
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <ConverterSection data={currency} getValue={getOptionValues} />
-        <CalculatorSection options={optionValues} />
+        <CalculatorSection
+          options={optionValues}
+          returnInputVal={getINputValueAndConvertNewResult}
+        />
         {staticCurrencies.map((currency) => (
           <CurrencySection key={currency.currency_id} {...currency} />
         ))}

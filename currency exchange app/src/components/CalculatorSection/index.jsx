@@ -3,7 +3,7 @@ import CalculatorIcon from "../../assets/Images/changer.svg";
 import { useRef } from "react";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-function CalculatorSection({ options }) {
+function CalculatorSection({ options, returnInputVal }) {
   const [currencyValue, setCurrencyValue] = useState();
   const [inputVal, setInputVal] = useState();
   const inputEl = useRef(null);
@@ -11,6 +11,7 @@ function CalculatorSection({ options }) {
     let inputValue = inputEl.current.value;
     setInputVal(inputValue);
     convertValue(inputValue);
+    returnInputVal(inputValue);
   }
 
   function convertValue(amount) {

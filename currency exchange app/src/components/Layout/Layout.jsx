@@ -5,8 +5,7 @@ import CurrencySection from "../CurrencySection";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-axios.defaults.headers["apikey"] =
-  import.meta.env.VITE_CURRENCY_EXCHANGE_API_KEY;
+axios.defaults.headers["apikey"] = "tMNYb5g0InBjhM17zCee7TRv27tZBHH9";
 function Layout() {
   const [currency, setCurrency] = useState([]);
   const [optionValues, setOptionValue] = useState({});

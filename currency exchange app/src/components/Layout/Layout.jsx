@@ -58,7 +58,6 @@ function Layout() {
   // i need to time for fixing bug here are my solving way
   function getINputValueAndConvertNewResult(amount) {
     // const arr = [];
-
     // for (let i = 0; i < staticCurrencies.length; i++) {
     //   axios
     //     .get(
@@ -69,7 +68,7 @@ function Layout() {
     //       arr = [data.result];
     //     });
     // }
-    console.log(arr, "array");
+    // console.log(arr, "array");
   }
 
   return (

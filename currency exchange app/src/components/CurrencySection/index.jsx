@@ -1,14 +1,19 @@
 import styles from "./CurrencySection.module.css";
 
-function CurrencySection() {
+function CurrencySection({
+  currency_sign,
+  currency_name,
+  currency_value,
+  data,
+}) {
   return (
     <div className={styles.container}>
       <div className={styles.currencyWrapper}>
         <div className={styles.currency}>
-          <span>$</span>
-          <span>Dollar</span>
+          <span>{currency_sign}</span>
+          <span>{currency_name}</span>
         </div>
-        <span>99.23</span>
+        <span>{currency_value}</span>
       </div>
     </div>
   );
